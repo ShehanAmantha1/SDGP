@@ -70,10 +70,13 @@ android {
 flutter {
     source '../..'
 <<<<<<< HEAD
+<<<<<<< HEAD
     buildFeatures {
     // ... other features
     androidEmbeddingVersion: '2.0';
   }
+=======
+>>>>>>> parent of 7914ff3 (build)
 =======
 >>>>>>> parent of 7914ff3 (build)
 }
