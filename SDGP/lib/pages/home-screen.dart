@@ -7,6 +7,7 @@ import 'package:myapp/pages/medical-history-page.dart';
 import 'package:myapp/utils.dart';
 
 class HomeScreen extends StatefulWidget {
+  
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
