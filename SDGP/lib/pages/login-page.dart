@@ -258,7 +258,7 @@ class _LoaginPageState extends State<LoaginPage> {
               child: TextButton(
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => Homescreen()));
+                      context, MaterialPageRoute(builder: (_) => HomeScreen()));
                 },
                 style: TextButton.styleFrom(
                   padding: EdgeInsets.zero,
