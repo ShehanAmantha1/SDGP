@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/pages/home-screen.dart';
 import 'package:myapp/utils.dart';
 
 class Medicalhistorypage extends StatelessWidget {
@@ -81,7 +82,9 @@ class Medicalhistorypage extends StatelessWidget {
                     // vectorQTa (1:151)
                     margin: EdgeInsets.fromLTRB(0*fem, 2*fem, 0*fem, 0*fem),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+
+                      },
                       style: TextButton.styleFrom (
                         padding: EdgeInsets.zero,
                       ),
@@ -144,7 +147,12 @@ class Medicalhistorypage extends StatelessWidget {
                     left: 113*fem,
                     top: 617*fem,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (_) => HomeScreen()),
+                        );
+                      },
                       style: TextButton.styleFrom (
                         padding: EdgeInsets.zero,
                       ),

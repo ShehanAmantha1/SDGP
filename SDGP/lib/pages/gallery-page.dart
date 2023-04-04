@@ -1,20 +1,147 @@
+import 'dart:io';
+import 'dart:typed_data';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:myapp/utils.dart';
 
-class Gallerypage extends StatelessWidget {
+class GalleryPage extends StatefulWidget {
+  const GalleryPage({Key? key}) : super(key: key);
 
-  selectImageFromCamera() async {      // select Image From the camera
-    XFile? file = await ImagePicker()
-        .pickImage(source: ImageSource.camera, imageQuality: 10);
-    if (file != null) {
-      return file.path;
-    } else {
-      return '';
-    }
+  @override
+  State<GalleryPage> createState() => _GalleryPageState();
+}
+
+class _GalleryPageState extends State<GalleryPage> {
+  String selectedImagePath = '';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.yellow.shade800,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            selectedImagePath == ''
+                ? Image.asset('assets/images/image_placeholder.png', height: 200, width: 200, fit: BoxFit.fill,)
+                : Image.file(File(selectedImagePath), height: 200, width: 200, fit: BoxFit.fill,),
+            Text(
+              'Select Image',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.green),
+                    padding:
+                    MaterialStateProperty.all(const EdgeInsets.all(20)),
+                    textStyle: MaterialStateProperty.all(
+                        const TextStyle(fontSize: 14, color: Colors.white))),
+                onPressed: () async {
+                  selectImage();
+                  setState(() {});
+                },
+                child: const Text('Select')),
+            const SizedBox(height: 10),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future selectImage() {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Dialog(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0)), //this right here
+            child: Container(
+              height: 150,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  children: [
+                    Text(
+                      'Select Image From !',
+                      style: TextStyle(
+                          fontSize: 18.0, fontWeight: FontWeight.bold),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GestureDetector(
+                          onTap: () async {
+                            selectedImagePath = await selectImageFromGallery();
+                            print('Image_Path:-');
+                            print(selectedImagePath);
+                            if (selectedImagePath != '') {
+                              Navigator.pop(context);
+                              setState(() {});
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text("No Image Selected !"),
+                              ));
+                            }
+                          },
+                          child: Card(
+                              elevation: 5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/gallery.png',
+                                      height: 60,
+                                      width: 60,
+                                    ),
+                                    Text('Gallery'),
+                                  ],
+                                ),
+                              )),
+                        ),
+                        GestureDetector(
+                          onTap: () async {
+                            selectedImagePath = await selectImageFromCamera();
+                            print('Image_Path:-');
+                            print(selectedImagePath);
+
+                            if (selectedImagePath != '') {
+                              Navigator.pop(context);
+                              setState(() {});
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text("No Image Captured !"),
+                              ));
+                            }
+                          },
+                          child: Card(
+                              elevation: 5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/camera.png',
+                                      height: 60,
+                                      width: 60,
+                                    ),
+                                    Text('Camera'),
+                                  ],
+                                ),
+                              )),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+          );
+        });
   }
 
   selectImageFromGallery() async {
@@ -27,173 +154,14 @@ class Gallerypage extends StatelessWidget {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    double baseWidth = 430;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
-    return Container(
-      width: double.infinity,
-      child: Container(
-        // gallerypagefDr (17:2)
-        padding: EdgeInsets.fromLTRB(10*fem, 280*fem, 10*fem, 49.17*fem),
-        width: double.infinity,
-        decoration: BoxDecoration (
-          color: Color(0x897590d4),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              // autogroupnbpwMsN (QkG7AbPnepJWmHRFmFNBPW)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 139*fem, 48*fem),
-              width: double.infinity,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Container(
-                    // rectangle104VCt (17:5)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 15*fem, 0*fem),
-                    width: 128*fem,
-                    height: 128*fem,
-                    child: Image.asset(
-                      'assets/page-1/images/rectangle-104.png',
-                      width: 128*fem,
-                      height: 128*fem,
-                    ),
-                  ),
-                  Container(
-                    // autogroupytoiCNC (QkG7JfzfBKyjKL7QK2Ytoi)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 51*fem),
-                    width: 128*fem,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // group9vJC (17:20)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 19*fem),
-                          child: TextButton(
-                            onPressed: () {
-                              selectImageFromCamera();
-
-                            },
-                            style: TextButton.styleFrom (
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Container(
-                              padding: EdgeInsets.fromLTRB(27*fem, 35.38*fem, 31*fem, 36.38*fem),
-                              width: double.infinity,
-                              decoration: BoxDecoration (
-                                color: Color(0x9e40558a),
-                                borderRadius: BorderRadius.circular(30*fem),
-                              ),
-                              child: Center(
-                                // materialsymbolsphotocameraQUG (17:15)
-                                child: SizedBox(
-                                  width: 70*fem,
-                                  height: 56.25*fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/material-symbols-photo-camera.png',
-                                    width: 70*fem,
-                                    height: 56.25*fem,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          // camerajWY (17:9)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 5*fem, 0*fem),
-                          child: Text(
-                            'Camera',
-                            style: SafeGoogleFont (
-                              'Inter',
-                              fontSize: 20*ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.2125*ffem/fem,
-                              color: Color(0xff000000),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              // group10EiC (17:21)
-              margin: EdgeInsets.fromLTRB(143*fem, 0*fem, 139*fem, 25*fem),
-              child: TextButton(
-                onPressed: () {
-                  selectImageFromGallery();
-                },
-                style: TextButton.styleFrom (
-                  padding: EdgeInsets.zero,
-                ),
-                child: Container(
-                  padding: EdgeInsets.fromLTRB(28.38*fem, 28.43*fem, 24.38*fem, 23.43*fem),
-                  width: double.infinity,
-                  decoration: BoxDecoration (
-                    color: Color(0xb740558a),
-                    borderRadius: BorderRadius.circular(30*fem),
-                  ),
-                  child: Center(
-                    // solargallerybold7GC (17:10)
-                    child: SizedBox(
-                      width: 75.25*fem,
-                      height: 76.15*fem,
-                      child: Image.asset(
-                        'assets/page-1/images/solar-gallery-bold.png',
-                        width: 75.25*fem,
-                        height: 76.15*fem,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              // galleryEbi (17:14)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 120*fem),
-              child: Text(
-                'Gallery',
-                style: SafeGoogleFont (
-                  'Inter',
-                  fontSize: 20*ffem,
-                  fontWeight: FontWeight.w500,
-                  height: 1.2125*ffem/fem,
-                  color: Color(0xff000000),
-                ),
-              ),
-            ),
-            Container(
-              // autogroupuafskKA (QkG7XFU32csoufrAiBuAFS)
-              margin: EdgeInsets.fromLTRB(103*fem, 0*fem, 104*fem, 0*fem),
-              width: double.infinity,
-              height: 33.83*fem,
-              decoration: BoxDecoration (
-                color: Color(0xffffffff),
-                borderRadius: BorderRadius.circular(20*fem),
-              ),
-              child: Center(
-                child: Text(
-                  'Back',
-                  style: SafeGoogleFont (
-                    'Inter',
-                    fontSize: 16*ffem,
-                    fontWeight: FontWeight.w500,
-                    height: 1.2125*ffem/fem,
-                    color: Color(0xff000000),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+  //
+  selectImageFromCamera() async {
+    XFile? file = await ImagePicker()
+        .pickImage(source: ImageSource.camera, imageQuality: 10);
+    if (file != null) {
+      return file.path;
+    } else {
+      return '';
+    }
   }
 }
-

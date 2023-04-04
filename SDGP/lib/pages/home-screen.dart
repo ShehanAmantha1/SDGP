@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: TextButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => Gallerypage()));
+                      MaterialPageRoute(builder: (_) => GalleryPage()));
                 },
                 style: TextButton.styleFrom (
                   padding: EdgeInsets.zero,
