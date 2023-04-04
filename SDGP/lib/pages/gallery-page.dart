@@ -4,7 +4,6 @@ import 'dart:typed_data';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:tflite/tflite.dart';
 
 class GalleryPage extends StatefulWidget {
   const GalleryPage({Key? key}) : super(key: key);
@@ -15,42 +14,6 @@ class GalleryPage extends StatefulWidget {
 
 class _GalleryPageState extends State<GalleryPage> {
   String selectedImagePath = '';
-  bool _loading = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _loading = true;
-
-    loadModel().then((value) {
-      setState(() {
-        _loading = false;
-      });
-    });
-  }
-
-  loadModel() async {
-    await Tflite.loadModel(
-      model: "assets\SDGP_CNN_Model.tflite",
-      labels: "assets\skin_cancer_labels.txt",
-      numThreads: 1,
-    );
-  }
-
-  lassifyImage(File image) async {
-    var output = await Tflite.runModelOnImage(
-        path: selectedImagePath,
-        );
-    setState(() {
-      _loading = false;
-    });
-  }
-
-   @override
-  void dispose() {
-    Tflite.close();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
