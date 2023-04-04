@@ -6,6 +6,27 @@ import 'package:image_picker/image_picker.dart';
 import 'package:myapp/utils.dart';
 
 class Gallerypage extends StatelessWidget {
+
+  selectImageFromCamera() async {      // select Image From the camera
+    XFile? file = await ImagePicker()
+        .pickImage(source: ImageSource.camera, imageQuality: 10);
+    if (file != null) {
+      return file.path;
+    } else {
+      return '';
+    }
+  }
+
+  selectImageFromGallery() async {
+    XFile? file = await ImagePicker()
+        .pickImage(source: ImageSource.gallery, imageQuality: 10);
+    if (file != null) {
+      return file.path;
+    } else {
+      return '';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
@@ -53,15 +74,7 @@ class Gallerypage extends StatelessWidget {
                           margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 19*fem),
                           child: TextButton(
                             onPressed: () {
-                              selectImageFromCamera() async {
-                                XFile? file = await ImagePicker()
-                                    .pickImage(source: ImageSource.camera, imageQuality: 10);
-                                if (file != null) {
-                                  return file.path;
-                                } else {
-                                  return '';
-                                }
-                              }
+                              selectImageFromCamera();
 
                             },
                             style: TextButton.styleFrom (
@@ -114,16 +127,7 @@ class Gallerypage extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(143*fem, 0*fem, 139*fem, 25*fem),
               child: TextButton(
                 onPressed: () {
-
-                  selectImageFromGallery() async {
-                    XFile? file = await ImagePicker()
-                        .pickImage(source: ImageSource.gallery, imageQuality: 10);
-                    if (file != null) {
-                      return file.path;
-                    } else {
-                      return '';
-                    }
-                  }
+                  selectImageFromGallery();
                 },
                 style: TextButton.styleFrom (
                   padding: EdgeInsets.zero,
