@@ -153,9 +153,9 @@ class Medicalhistorypage extends StatelessWidget {
                     top: 617*fem,
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (_) => HomeScreen()),
+                        Navigator.push(context,
+                            MaterialPageRoute(
+                                builder: (_)=> HomeScreen()),
                         );
                       },
                       style: TextButton.styleFrom (

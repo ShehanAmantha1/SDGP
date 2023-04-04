@@ -71,7 +71,7 @@ flutter {
     source '../..'
     buildFeatures {
     // ... other features
-    androidEmbeddingVersion: '2.0'
+    androidEmbeddingVersion: '2.0';
   }
 }
 
