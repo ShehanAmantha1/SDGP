@@ -18,7 +18,7 @@ class _GalleryPageState extends State<GalleryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow.shade800,
+      backgroundColor: Color(0x8e748fd4),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
