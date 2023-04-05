@@ -1,6 +1,6 @@
 package com.example.test
 
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterActivity;
 
-class MainActivity: FlutterActivity() {
+public class MainActivity extends  FlutterActivity() {
 }
