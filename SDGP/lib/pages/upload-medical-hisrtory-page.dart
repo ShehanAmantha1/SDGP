@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/pages/medical-history-page.dart';
 import 'package:myapp/utils.dart';
 
 class UploadmedicalHistorypage extends StatelessWidget {
@@ -44,12 +43,7 @@ class UploadmedicalHistorypage extends StatelessWidget {
               left: 114*fem,
               top: 836*fem,
               child: TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                    MaterialPageRoute
-                      (builder: (_)=>
-                        Medicalhistorypage()),);
-                },
+                onPressed: () {},
                 style: TextButton.styleFrom (
                   padding: EdgeInsets.zero,
                 ),
