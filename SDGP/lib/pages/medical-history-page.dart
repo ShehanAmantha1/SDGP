@@ -79,7 +79,10 @@ class Medicalhistorypage extends StatelessWidget {
                       ],
                     ),
                   ),*/
+    
                   Container(
+                    alignment: Alignment.topRight,
+
                     // vectorQTa (1:151)
                     margin: EdgeInsets.fromLTRB(0*fem, 2*fem, 0*fem, 0*fem),
                     child: TextButton(
@@ -97,7 +100,6 @@ class Medicalhistorypage extends StatelessWidget {
                         width: 34*fem,
                         height: 33*fem,
                         child: Image.asset(
-                          alignment:Alignment.topRight,
                           'assets/page-1/images/vector-JCQ.png',
                           width: 30*fem,
                           height: 28*fem,
