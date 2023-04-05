@@ -79,7 +79,7 @@ class Medicalhistorypage extends StatelessWidget {
                       ],
                     ),
                   ),*/
-    
+
                   Container(
                     alignment: Alignment.topRight,
 
