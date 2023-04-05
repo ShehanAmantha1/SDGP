@@ -24,8 +24,18 @@ class _GalleryPageState extends State<GalleryPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             selectedImagePath == ''
-                ? Image.asset('assets/page-1/images/beautiful-girl-face-perfect-skin-1.png', height: 200, width: 200, fit: BoxFit.fill,)
-                : Image.file(File(selectedImagePath), height: 200, width: 200, fit: BoxFit.fill,),
+                ? Image.asset(
+                    'assets/page-1/images/beautiful-girl-face-perfect-skin-1.png',
+                    height: 200,
+                    width: 200,
+                    fit: BoxFit.fill,
+                  )
+                : Image.file(
+                    File(selectedImagePath),
+                    height: 200,
+                    width: 200,
+                    fit: BoxFit.fill,
+                  ),
             Text(
               'Select Image',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
@@ -35,9 +45,9 @@ class _GalleryPageState extends State<GalleryPage> {
             ),
             ElevatedButton(
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.green),
+                    backgroundColor: MaterialStateProperty.all(Colors.white),
                     padding:
-                    MaterialStateProperty.all(const EdgeInsets.all(20)),
+                        MaterialStateProperty.all(const EdgeInsets.all(20)),
                     textStyle: MaterialStateProperty.all(
                         const TextStyle(fontSize: 14, color: Colors.white))),
                 onPressed: () async {
@@ -82,7 +92,8 @@ class _GalleryPageState extends State<GalleryPage> {
                               Navigator.pop(context);
                               setState(() {});
                             } else {
-                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(SnackBar(
                                 content: Text("No Image Selected !"),
                               ));
                             }
@@ -113,7 +124,8 @@ class _GalleryPageState extends State<GalleryPage> {
                               Navigator.pop(context);
                               setState(() {});
                             } else {
-                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(SnackBar(
                                 content: Text("No Image Captured !"),
                               ));
                             }

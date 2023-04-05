@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 
-var source;
+late var source;
 
 class Tensorflow extends StatefulWidget {
   @override
@@ -53,7 +53,11 @@ class _TensorflowState extends State<Tensorflow> {
                         _image == null
                             ? Container()
                             : _outputs != null
-                                ? Text(_outputs[0],style: TextStyle(color: Colors.black, fontSize: 20),)
+                                ? Text(
+                                    _outputs[0],
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 20),
+                                  )
                                 : Container(child: Text(""))
                       ],
                     ),
@@ -118,7 +122,7 @@ class _TensorflowState extends State<Tensorflow> {
     );
   }
 
-  late List<String > _outputs;
+  late List<String> _outputs;
   File? _image = null;
   bool _loading = false;
 
