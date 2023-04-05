@@ -55,10 +55,9 @@ class _LoaginPageState extends State<LoaginPage> {
                   height: 39 * fem,
                   child: Text(
                     'Log In To Continue',
-                    style: SafeGoogleFont(
-                      'Inter',
+                    style: TextStyle(
                       fontSize: 32 * ffem,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.bold,
                       height: 1.2125 * ffem / fem,
                       color: Color(0xffffffff),
                     ),
