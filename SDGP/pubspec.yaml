@@ -41,6 +41,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^3.0.1
   image_picker: ^0.8.7+1
+  tflite:
 
 dev_dependencies:
   flutter_test:
@@ -108,6 +109,8 @@ flutter:
     - assets/page-1/images/beautiful-girl-face-perfect-skin-1.png
     - assets/page-1/images/.png
     - assets/page-1/images/beautiful-shot-forest-with-tall-green-trees-1.png
+    - assets/labels.txt
+    - assets/model.tflite
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
