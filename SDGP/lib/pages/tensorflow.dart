@@ -41,7 +41,7 @@ class _TensorflowState extends State<Tensorflow> {
     );
     setState(() {
       _loading = false;
-      _outputs = output;
+      _outputs = output!;
     });
   }
 
