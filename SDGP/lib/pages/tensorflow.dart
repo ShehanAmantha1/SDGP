@@ -11,8 +11,8 @@ class Tensorflow extends StatefulWidget {
 }
 
 class _TensorflowState extends State<Tensorflow> {
-  late List _outputs;
-  late File _image;
+  List<dynamic> _outputs = [];
+  File _image = null!;
   bool _loading = false;
 
   @override
