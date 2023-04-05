@@ -4,21 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 
-late var source;
-
 class Tensorflow extends StatefulWidget {
   @override
   _TensorflowState createState() => _TensorflowState();
 }
 
 class _TensorflowState extends State<Tensorflow> {
+  var source;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Skin Check",
+          "Prediction",
           style: TextStyle(color: Colors.white, fontSize: 25),
         ),
         backgroundColor: Colors.amber,
