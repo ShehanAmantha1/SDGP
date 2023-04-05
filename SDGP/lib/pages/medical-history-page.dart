@@ -32,7 +32,7 @@ class Medicalhistorypage extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
+                  /*Container(
                     // autogroupxzu8yDr (8umXuKZPoRGYBjyWipXzU8)
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 19*fem, 0*fem),
                     padding: EdgeInsets.fromLTRB(13*fem, 12*fem, 201*fem, 11*fem),
@@ -62,7 +62,7 @@ class Medicalhistorypage extends StatelessWidget {
                             height: 20*fem,
                           ),
                         ),
-                        Container(
+                         Container(
                           // searchhereJvL (1:149)
                           margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
                           child: Text(
@@ -78,7 +78,7 @@ class Medicalhistorypage extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ),
+                  ),*/
                   Container(
                     // vectorQTa (1:151)
                     margin: EdgeInsets.fromLTRB(0*fem, 2*fem, 0*fem, 0*fem),
@@ -97,9 +97,10 @@ class Medicalhistorypage extends StatelessWidget {
                         width: 34*fem,
                         height: 33*fem,
                         child: Image.asset(
+                          alignment:Alignment.topRight,
                           'assets/page-1/images/vector-JCQ.png',
-                          width: 34*fem,
-                          height: 33*fem,
+                          width: 30*fem,
+                          height: 28*fem,
                         ),
                       ),
                     ),
