@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
+
 var source;
 
 class Tensorflow extends StatefulWidget {
@@ -10,8 +11,8 @@ class Tensorflow extends StatefulWidget {
 }
 
 class _TensorflowState extends State<Tensorflow> {
-  late  List _outputs;
-  late  File _image;
+  late List _outputs;
+  late File _image;
   bool _loading = false;
 
   @override
@@ -33,20 +34,23 @@ class _TensorflowState extends State<Tensorflow> {
       numThreads: 1,
     );
   }
+
   classifyImage(File image) async {
     var output = await Tflite.runModelOnImage(
-        path: image.path,
-        );
+      path: image.path,
+    );
     setState(() {
       _loading = false;
       _outputs = output!;
     });
   }
+
   @override
   void dispose() {
     Tflite.close();
     super.dispose();
   }
+
   pickImage() async {
     var image = await ImagePicker().pickImage(source: source);
     if (image == null) return null;
@@ -56,6 +60,7 @@ class _TensorflowState extends State<Tensorflow> {
     });
     classifyImage(_image);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,63 +78,93 @@ class _TensorflowState extends State<Tensorflow> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            _loading ? Container(
-              height: 300,
-              width: 300,
-            ):
-            Container(
-              margin: EdgeInsets.all(20),
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  _image == null ? Container() : Container(child:Image.file(_image),height: 300,),
-                  SizedBox(
-                    height: 20,
+            _loading
+                ? Container(
+                    height: 300,
+                    width: 300,
+                  )
+                : Container(
+                    margin: EdgeInsets.all(20),
+                    width: MediaQuery.of(context).size.width,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        _image == null
+                            ? Container()
+                            : Container(
+                                child: Image.file(_image),
+                                height: 300,
+                              ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        _image == null
+                            ? Container()
+                            : _outputs != null
+                                ? Text(
+                                    _outputs[0]["label"],
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 20),
+                                  )
+                                : Container(child: Text(""))
+                      ],
+                    ),
                   ),
-                  _image == null ? Container() : _outputs != null ?
-                  Text(_outputs[0]["label"],style: TextStyle(color: Colors.black,fontSize: 20),
-                  ) : Container(child: Text(""))
-                ],
-              ),
-            ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
-            Row(mainAxisAlignment:MainAxisAlignment.center,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-              FloatingActionButton(
-                tooltip: 'Pick Image',
-                onPressed: (){
-                  setState(() {
-                    source = ImageSource.gallery;
-                  });
-                  pickImage();},
-                child: Icon(Icons.add_a_photo,
-                  size: 20,
-                  color: Colors.white,
+                FloatingActionButton(
+                  tooltip: 'Pick Image',
+                  onPressed: () {
+                    setState(() {
+                      source = ImageSource.gallery;
+                    });
+                    pickImage();
+                  },
+                  child: Icon(
+                    Icons.add_a_photo,
+                    size: 20,
+                    color: Colors.white,
+                  ),
+                  backgroundColor: Colors.amber,
                 ),
-                backgroundColor: Colors.amber,
-              ),
-              SizedBox(width: 20,),
-              FloatingActionButton(
-                tooltip: 'Pick Image',
-                onPressed: (){
-                  setState(() {
-                    source = ImageSource.camera;
-                  });
-                  pickImage();},
-                child: Icon(Icons.camera,
-                  size: 20,
-                  color: Colors.white,
+                SizedBox(
+                  width: 20,
                 ),
-                backgroundColor: Colors.amber,
+                FloatingActionButton(
+                  tooltip: 'Pick Image',
+                  onPressed: () {
+                    setState(() {
+                      source = ImageSource.camera;
+                    });
+                    pickImage();
+                  },
+                  child: Icon(
+                    Icons.camera,
+                    size: 20,
+                    color: Colors.white,
+                  ),
+                  backgroundColor: Colors.amber,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              child: FlatButton(
+                padding: EdgeInsets.all(10),
+                child: Text('Consult to Doctors'),
+                onPressed: () {
+                  Navigator.pushNamed(context, 'DoctorsList');
+                },
               ),
-            ],),
-            SizedBox(height: 20,),
-            Container(child: FlatButton(padding:EdgeInsets.all(10), child: Text('Consult to Doctors'),onPressed:(){ Navigator.pushNamed(context,'DoctorsList');},),color: Colors.amber,)
-
+              color: Colors.amber,
+            )
           ],
         ),
       ),
@@ -137,5 +172,7 @@ class _TensorflowState extends State<Tensorflow> {
   }
 }
 
-FlatButton({required EdgeInsets padding, required Text child, required Null Function() onPressed}) async {
-}
+FlatButton(
+    {required EdgeInsets padding,
+    required Text child,
+    required Null Function() onPressed}) async {}
