@@ -1,3 +1,4 @@
+import 'dart:core';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -11,56 +12,6 @@ class Tensorflow extends StatefulWidget {
 }
 
 class _TensorflowState extends State<Tensorflow> {
-  late List _outputs = [];
-  File? _image = null;
-  bool _loading = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _loading = true;
-
-    loadModel().then((value) {
-      setState(() {
-        _loading = false;
-      });
-    });
-  }
-
-  loadModel() async {
-    await Tflite.loadModel(
-      model: "assets/model.tflite",
-      labels: "assets/labels.txt",
-      numThreads: 1,
-    );
-  }
-
-  classifyImage(File image) async {
-    var output = await Tflite.runModelOnImage(
-      path: image.path,
-    );
-    setState(() {
-      _loading = false;
-      _outputs = output;
-    });
-  }
-
-  @override
-  void dispose() {
-    Tflite.close();
-    super.dispose();
-  }
-
-  pickImage() async {
-    var image = await ImagePicker().pickImage(source: source);
-    if (image == null) return null;
-    setState(() {
-      _loading = true;
-      _image = image as File;
-    });
-    classifyImage(_image!);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -169,6 +120,55 @@ class _TensorflowState extends State<Tensorflow> {
         ),
       ),
     );
+  }
+
+  late List _outputs;
+  File? _image = null;
+  bool _loading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loading = true;
+
+    loadModel().then((value) {
+      setState(() {
+        _loading = false;
+      });
+    });
+  }
+
+  loadModel() async {
+    await Tflite.loadModel(
+      model: "assets/model.tflite",
+      labels: "assets/labels.txt",
+      numThreads: 1,
+    );
+  }
+
+  classifyImage(File image) async {
+    _outputs = (await Tflite.runModelOnImage(
+      path: image.path,
+    ))!;
+    setState(() {
+      _loading = false;
+    });
+  }
+
+  @override
+  void dispose() {
+    Tflite.close();
+    super.dispose();
+  }
+
+  pickImage() async {
+    var image = await ImagePicker().pickImage(source: source);
+    if (image == null) return null;
+    setState(() {
+      _loading = true;
+      _image = image as File;
+    });
+    classifyImage(_image!);
   }
 }
 
