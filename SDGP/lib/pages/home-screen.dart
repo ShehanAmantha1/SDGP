@@ -6,6 +6,8 @@ import 'package:myapp/pages/gallery-page.dart';
 import 'package:myapp/pages/medical-history-page.dart';
 import 'package:myapp/utils.dart';
 
+import 'tensorflow.dart';
+
 class HomeScreen extends StatefulWidget {
   
   @override
@@ -53,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: TextButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => GalleryPage()));
+                      MaterialPageRoute(builder: (_) => Tensorflow()));
                 },
                 style: TextButton.styleFrom (
                   padding: EdgeInsets.zero,
