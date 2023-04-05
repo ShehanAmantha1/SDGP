@@ -53,11 +53,7 @@ class _TensorflowState extends State<Tensorflow> {
                         _image == null
                             ? Container()
                             : _outputs != null
-                                ? Text(
-                                    _outputs[0]["label"],
-                                    style: TextStyle(
-                                        color: Colors.black, fontSize: 20),
-                                  )
+                                ? Text(_outputs[0],style: TextStyle(color: Colors.black, fontSize: 20),)
                                 : Container(child: Text(""))
                       ],
                     ),
@@ -122,7 +118,7 @@ class _TensorflowState extends State<Tensorflow> {
     );
   }
 
-  late List _outputs;
+  late List<String > _outputs;
   File? _image = null;
   bool _loading = false;
 
@@ -147,11 +143,12 @@ class _TensorflowState extends State<Tensorflow> {
   }
 
   classifyImage(File image) async {
-    _outputs = (await Tflite.runModelOnImage(
+    var output = (await Tflite.runModelOnImage(
       path: image.path,
     ))!;
     setState(() {
       _loading = false;
+      //_outputs = output;
     });
   }
 
