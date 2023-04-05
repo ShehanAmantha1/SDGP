@@ -147,12 +147,11 @@ class _TensorflowState extends State<Tensorflow> {
   }
 
   classifyImage(File image) async {
-    var output = await Tflite.runModelOnImage(
+    _outputs = (await Tflite.runModelOnImage(
       path: image.path,
-    );
+    ))!;
     setState(() {
       _loading = false;
-      _outputs = output!;
     });
   }
 
