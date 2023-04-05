@@ -14,8 +14,6 @@ import 'package:myapp/pages/medical-history-page.dart';
 import 'package:myapp/pages/upload-medical-hisrtory-page.dart';
 import 'package:myapp/pages/gallery-page.dart';
 import 'package:myapp/pages/loading-page.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import './models/History.dart';
 
 void main() => runApp(MyApp());
 
