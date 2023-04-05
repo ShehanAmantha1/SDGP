@@ -12,7 +12,7 @@ class Tensorflow extends StatefulWidget {
 
 class _TensorflowState extends State<Tensorflow> {
   List<dynamic> _outputs = [];
-  File _image = null!;
+  File? _image = null;
   bool _loading = false;
 
   @override
@@ -58,7 +58,7 @@ class _TensorflowState extends State<Tensorflow> {
       _loading = true;
       _image = image as File;
     });
-    classifyImage(_image);
+    classifyImage(_image!);
   }
 
   @override
@@ -93,7 +93,7 @@ class _TensorflowState extends State<Tensorflow> {
                         _image == null
                             ? Container()
                             : Container(
-                                child: Image.file(_image),
+                                child: Image.file(_image!),
                                 height: 300,
                               ),
                         SizedBox(
