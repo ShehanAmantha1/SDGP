@@ -10,8 +10,8 @@ class Tensorflow extends StatefulWidget {
 }
 
 class _TensorflowState extends State<Tensorflow> {
-  late final List _outputs;
-  late final File _image;
+  late  List _outputs;
+  late  File _image;
   bool _loading = false;
 
   @override
