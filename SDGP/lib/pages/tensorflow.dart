@@ -11,7 +11,7 @@ class Tensorflow extends StatefulWidget {
 }
 
 class _TensorflowState extends State<Tensorflow> {
-  List outputs = [];
+  late List _outputs = [];
   File? _image = null;
   bool _loading = false;
 
@@ -36,12 +36,12 @@ class _TensorflowState extends State<Tensorflow> {
   }
 
   classifyImage(File image) async {
-    dynamic output = await Tflite.runModelOnImage(
+    var output = await Tflite.runModelOnImage(
       path: image.path,
     );
     setState(() {
       _loading = false;
-      outputs = output;
+      _outputs = output;
     });
   }
 
@@ -101,9 +101,9 @@ class _TensorflowState extends State<Tensorflow> {
                         ),
                         _image == null
                             ? Container()
-                            : outputs != null
+                            : _outputs != null
                                 ? Text(
-                                    outputs[0]["label"],
+                                    _outputs[0]["label"],
                                     style: TextStyle(
                                         color: Colors.black, fontSize: 20),
                                   )
