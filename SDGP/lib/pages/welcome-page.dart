@@ -19,8 +19,9 @@ class _WelcomepageState extends State<Welcomepage> {
     double ffem = fem * 0.97;
     return Container(
       width: double.infinity,
+
+
       child: Container(
-        // welcomepageHxk (1:2)
         padding: EdgeInsets.fromLTRB(0 * fem, 133 * fem, 0 * fem, 0 * fem),
         width: double.infinity,
         decoration: BoxDecoration(
@@ -60,12 +61,12 @@ class _WelcomepageState extends State<Welcomepage> {
                         EdgeInsets.fromLTRB(2 * fem, 0 * fem, 0 * fem, 0 * fem),
                     child: Text(
                       'Welcome',
-                      style: SafeGoogleFont(
-                        'Inter',
-                        fontSize: 32 * ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.2125 * ffem / fem,
-                        color: Color(0xff000000),
+                      style: TextStyle(
+
+                        fontSize: 44.0,
+                        fontWeight: FontWeight.bold,
+
+                        color: Colors.black,
                       ),
                     ),
                   ),
@@ -236,6 +237,8 @@ class _WelcomepageState extends State<Welcomepage> {
           ],
         ),
       ),
+
     );
+
   }
 }
