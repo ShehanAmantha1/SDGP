@@ -50,8 +50,12 @@ class _GalleryPageState extends State<GalleryPage> {
                         MaterialStateProperty.all(const EdgeInsets.all(20)),
                     textStyle: MaterialStateProperty.all(
                         const TextStyle(fontSize: 14, color: Colors.white))),
-                onPressed: () async {
-                  selectImage();
+                onPressed: (
+
+                    ) async {
+                  selectImage(
+
+                  );
                   setState(() {});
                 },
                 child: const Text('Select')),

@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:myapp/pages/home-screen.dart';
 import 'package:myapp/pages/login-page.dart';
@@ -102,14 +103,14 @@ class UploadmedicalHistorypage extends StatelessWidget {
               fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
               filled: true,
               prefixIcon: Icon(Icons.note),
-              labelStyle: TextStyle(fontSize: 20, color: Colors.black),
+              labelStyle: TextStyle(fontSize: 24, color: Colors.black),
               border: UnderlineInputBorder()),
           obscureText: false,
           maxLines: 3,
         ),
 
         SizedBox(
-          height: 70,
+          height: 16,
         ),
 
 
