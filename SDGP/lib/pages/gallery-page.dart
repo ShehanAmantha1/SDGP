@@ -50,8 +50,12 @@ class _GalleryPageState extends State<GalleryPage> {
                         MaterialStateProperty.all(const EdgeInsets.all(20)),
                     textStyle: MaterialStateProperty.all(
                         const TextStyle(fontSize: 14, color: Colors.white))),
-                onPressed: () async {
-                  selectImage();
+                onPressed: (
+
+                    ) async {
+                  selectImage(
+
+                  );
                   setState(() {});
                 },
                 child: const Text('Select')),
@@ -137,9 +141,9 @@ class _GalleryPageState extends State<GalleryPage> {
                                 child: Column(
                                   children: [
                                     Image.asset(
-                                      'SDGP/assets/page-1/images/material-symbols-photo-camera.png',
+                                      'assets/page-1/images/image-gallery-1.png',
                                       height: 60,
-                                      width: 60,
+                                      width: 73.2,
                                     ),
                                     Text('Camera'),
                                   ],

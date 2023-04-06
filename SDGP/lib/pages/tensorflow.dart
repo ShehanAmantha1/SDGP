@@ -10,8 +10,8 @@ class Tensorflow extends StatefulWidget {
 }
 
 class _TensorflowState extends State<Tensorflow> {
-  List<dynamic> _outputs = [];
-  late File _image ;
+  late List _outputs;
+  late File _image;
   bool _loading = false;
 
   @override
@@ -48,11 +48,11 @@ class _TensorflowState extends State<Tensorflow> {
     super.dispose();
   }
   pickImage() async {
-    File image = (await ImagePicker().pickImage(source: source)) as File;
+    var image = await ImagePicker().pickImage(source: source);
     if (image == null) return null;
     setState(() {
       _loading = true;
-      _image = image ;
+      _image = image as File;
     });
    classifyImage(_image);
   }
@@ -68,6 +68,7 @@ class _TensorflowState extends State<Tensorflow> {
         backgroundColor: Colors.blue,
         elevation: 0,
       ),
+
       body: Container(
         color: Colors.white,
         child: Column(
@@ -84,13 +85,13 @@ class _TensorflowState extends State<Tensorflow> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _image == null? Container() : Container(child:Image.file(_image),height: 300,),
+                  //_image == null ? Container() : Container(child:Image.file(_image),height: 300,),
                   SizedBox(
                     height: 20,
                   ),
                   //_image == null ? Container() : _outputs != null ?
                   /*Text(_outputs[0]["label"],style: TextStyle(color: Colors.black,fontSize: 20),
-                  ) :*/Container(child: Text(""))
+                  ) : */Container(child: Text(""))
                 ],
               ),
            ),
