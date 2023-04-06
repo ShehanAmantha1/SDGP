@@ -18,7 +18,7 @@ class _GalleryPageState extends State<GalleryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0x8e748fd4),
+      backgroundColor: Color(0xFF80DEEA),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -36,20 +36,23 @@ class _GalleryPageState extends State<GalleryPage> {
                     width: 200,
                     fit: BoxFit.fill,
                   ),
+            SizedBox(
+              height: 20.0,
+            ),
             Text(
               'Select Image',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40.0),
             ),
             SizedBox(
               height: 20.0,
             ),
             ElevatedButton(
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.white),
+                    backgroundColor: MaterialStateProperty.all(Colors.blue),
                     padding:
                         MaterialStateProperty.all(const EdgeInsets.all(20)),
                     textStyle: MaterialStateProperty.all(
-                        const TextStyle(fontSize: 14, color: Colors.white))),
+                        const TextStyle(fontSize: 25, color: Colors.black))),
                 onPressed: (
 
                     ) async {
@@ -58,7 +61,7 @@ class _GalleryPageState extends State<GalleryPage> {
                   );
                   setState(() {});
                 },
-                child: const Text('Select')),
+                child: const Text('select')),
             const SizedBox(height: 10),
           ],
         ),
