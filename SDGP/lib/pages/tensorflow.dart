@@ -10,8 +10,8 @@ class Tensorflow extends StatefulWidget {
 }
 
 class _TensorflowState extends State<Tensorflow> {
-   List _outputs = [];
-   late File _image;
+  List _outputs;
+  File _image;
   bool _loading = false;
 
   @override
@@ -34,12 +34,12 @@ class _TensorflowState extends State<Tensorflow> {
     );
   }
   classifyImage(File image) async {
-     _outputs = (await Tflite.runModelOnImage(
+    var output = await Tflite.runModelOnImage(
         path: image.path,
-        ))!;
+        );
     setState(() {
       _loading = false;
-      //_outputs = output;
+      _outputs = output;
     });
   }
   @override
@@ -48,13 +48,13 @@ class _TensorflowState extends State<Tensorflow> {
     super.dispose();
   }
   pickImage() async {
-     _image = (await ImagePicker().pickImage(source: source)) as File;
-    if (_image == null) return null;
+    var image = await ImagePicker().pickImage(source: source);
+    if (image == null) return null;
     setState(() {
       _loading = true;
-      //_image = image;
+      _image = image;
     });
-    classifyImage(_image as File);
+    classifyImage(_image);
   }
   @override
   Widget build(BuildContext context) {
@@ -136,5 +136,5 @@ class _TensorflowState extends State<Tensorflow> {
     );
   }
 }
-//  FlatButton({EdgeInsets padding, Text child, Null Function() onPressed}) {
 
+//FlatButton({EdgeInsets padding, Text child, Null Function() onPressed}) {}
