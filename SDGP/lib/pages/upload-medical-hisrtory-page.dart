@@ -69,53 +69,54 @@ class CustomFormState extends State<CustomForm> {
 }
 
 // Create a corresponding State class. This class holds data related to the form.
-class MyCustomFormState extends State<MyCustomForm> {
+  class MyCustomFormState extends State<MyCustomForm> {
   // Create a global key that uniquely identifies the Form widget
   // and allows validation of the form.
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    // Build a Form widget using the _formKey created above.
-    return Form(
-      key: _formKey,
-      child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: const Icon(Icons.person),
-                hintText: 'Enter your name',
-                labelText: 'Name',
-              ),
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: const Icon(Icons.phone),
-                hintText: '+94 123456789',
-                labelText: 'Phone',
-              ),
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: const Icon(Icons.calendar_today),
-                hintText: 'example@abc.com',
-                labelText: 'email',
-              ),
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: const Icon(Icons.calendar_today),
-                hintText: '01-01-1999',
-                labelText: 'Dob',
+  // Build a Form widget using the _formKey created above.
+  return Form(
+  key: _formKey,
+  child: Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: <Widget>[
+  TextFormField(
+  decoration: const InputDecoration(
+  icon: const Icon(Icons.person),
+  hintText: 'Enter your name',
+  labelText: 'Name',
+  ),
+  ),
+  TextFormField(
+  decoration: const InputDecoration(
+  icon: const Icon(Icons.phone),
+  hintText: 'Enter a phone number',
+  labelText: 'Phone',
+  ),
+  ),
+  TextFormField(
+  decoration: const InputDecoration(
+  icon: const Icon(Icons.calendar_today),
+  hintText: 'Enter you email',
+  labelText: 'email',
+  ),
+  ),
+  TextFormField(
+  decoration: const InputDecoration(
+  icon: const Icon(Icons.calendar_today),
+  hintText: 'Enter your date of birth',
+  labelText: 'Dob',
 
 
 
 
-              ),
-            ),
-          ]
-      ),
+  ),
+  ),
+    ]
+    ),
     );
   }
 }
+
