@@ -2,6 +2,7 @@ import 'dart:core';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:myapp/pages/recomened-doctor-page.dart';
 import 'package:tflite/tflite.dart';
 
 class Tensorflow extends StatefulWidget {
@@ -108,12 +109,13 @@ class _TensorflowState extends State<Tensorflow> {
             Container(
               child: FlatButton(
                 padding: EdgeInsets.all(10),
-                child: Text('Consult to Doctors'),
+                child: Text('Recomended  Doctors'),
                 onPressed: () {
-                  Navigator.pushNamed(context, 'DoctorsList');
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => doctorpage()));
                 },
               ),
-              color: Colors.amber,
+              color: Color(0x8e748fd4),
             )
           ],
         ),
