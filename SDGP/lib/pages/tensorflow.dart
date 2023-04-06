@@ -11,7 +11,7 @@ class Tensorflow extends StatefulWidget {
 }
 
 class _TensorflowState extends State<Tensorflow> {
-  late var source;
+  //late var source;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,28 +29,29 @@ class _TensorflowState extends State<Tensorflow> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           /* _loading
+            /* _loading
                 ? Container(
                     height: 300,
                     width: 300,
                   )
-                : */Container(
-                    margin: EdgeInsets.all(20),
-                    width: MediaQuery.of(context).size.width,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        /*_image == null
+                : */
+            Container(
+              margin: EdgeInsets.all(20),
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  /*_image == null
                             ? Container()
                             : Container(
                                 child: Image.file(_image!),
                                 height: 300,
                               ),*/
-                        SizedBox(
-                          height: 20,
-                        ),
-                        /*_image == null
+                  SizedBox(
+                    height: 20,
+                  ),
+                  /*_image == null
                             ? Container()
                             : _outputs != null
                               ? Text(
@@ -58,10 +59,10 @@ class _TensorflowState extends State<Tensorflow> {
                                     style: TextStyle(
                                         color: Colors.black, fontSize: 20),
                                   )*/
-                                 Container(child: Text(""))
-                      ],
-                    ),
-                  ),
+                  Container(child: Text(""))
+                ],
+              ),
+            ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
@@ -72,7 +73,7 @@ class _TensorflowState extends State<Tensorflow> {
                   tooltip: 'Pick Image',
                   onPressed: () {
                     setState(() {
-                      source = ImageSource.gallery;
+                      //source = ImageSource.gallery;
                     });
                     //pickImage();
                   },
@@ -90,7 +91,7 @@ class _TensorflowState extends State<Tensorflow> {
                   tooltip: 'Pick Image',
                   onPressed: () {
                     setState(() {
-                      source = ImageSource.camera;
+                      //source = ImageSource.camera;
                     });
                     //pickImage();
                   },
