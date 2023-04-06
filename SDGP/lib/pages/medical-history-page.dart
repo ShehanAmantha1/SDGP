@@ -31,55 +31,7 @@ class Medicalhistorypage extends StatelessWidget {
               height: 43*fem,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  /*Container(
-                    // autogroupxzu8yDr (8umXuKZPoRGYBjyWipXzU8)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 19*fem, 0*fem),
-                    padding: EdgeInsets.fromLTRB(13*fem, 12*fem, 201*fem, 11*fem),
-                    height: double.infinity,
-                    decoration: BoxDecoration (
-                      color: Color(0x6df9f9f9),
-                      borderRadius: BorderRadius.circular(35*fem),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0x3f000000),
-                          offset: Offset(0*fem, 4*fem),
-                          blurRadius: 2*fem,
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // vectorCMW (1:150)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 17*fem, 0*fem),
-                          width: 21*fem,
-                          height: 20*fem,
-                          child: Image.asset(
-                            'assets/page-1/images/vector-9k4.png',
-                            width: 21*fem,
-                            height: 20*fem,
-                          ),
-                        ),
-                         Container(
-                          // searchhereJvL (1:149)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
-                          child: Text(
-                            'Search Here',
-                            style: SafeGoogleFont (
-                              'Inter',
-                              fontSize: 14*ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.2125*ffem/fem,
-                              color: Color(0x84000000),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),*/
-
+                children:[
                   Container(
                     alignment: Alignment.topRight,
 
@@ -110,8 +62,7 @@ class Medicalhistorypage extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              // autogroupkrmeHXN (8umY7pCaNFYwBfmTCSKrmE)
+            SizedBox(
               width: 430*fem,
               height: 768*fem,
               child: Stack(

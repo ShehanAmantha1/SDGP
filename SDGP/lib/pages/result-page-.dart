@@ -128,7 +128,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // diaperrashxQp (1:98)
               left: 99*fem,
               top: 355*fem,
               child: Align(
@@ -149,7 +148,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // T6g (1:99)
               left: 300*fem,
               top: 568*fem,
               child: Align(
@@ -170,7 +168,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // probabilityvFA (1:100)
               left: 99*fem,
               top: 589*fem,
               child: Align(
@@ -191,7 +188,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // wartsoZr (1:101)
               left: 100*fem,
               top: 566*fem,
               child: Align(
@@ -212,7 +208,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // HV2 (1:102)
               left: 296*fem,
               top: 648*fem,
               child: Align(
@@ -233,7 +228,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // probabilityPHA (1:103)
               left: 101*fem,
               top: 667*fem,
               child: Align(
@@ -254,7 +248,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // skincancer4u6 (1:104)
               left: 100*fem,
               top: 641*fem,
               child: Align(
@@ -275,7 +268,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // wxt (1:105)
               left: 300*fem,
               top: 509*fem,
               child: Align(
