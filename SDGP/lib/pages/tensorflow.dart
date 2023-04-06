@@ -11,7 +11,7 @@ class Tensorflow extends StatefulWidget {
 }
 
 class _TensorflowState extends State<Tensorflow> {
-  var source;
+  late var source;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +21,7 @@ class _TensorflowState extends State<Tensorflow> {
           "Prediction",
           style: TextStyle(color: Colors.white, fontSize: 25),
         ),
-        backgroundColor: Colors.amber,
+        backgroundColor: Color.fromARGB(255, 5, 86, 238),
         elevation: 0,
       ),
       body: Container(
@@ -115,7 +115,7 @@ class _TensorflowState extends State<Tensorflow> {
                       context, MaterialPageRoute(builder: (_) => doctorpage()));
                 },
               ),
-              color: Color(0x8e748fd4),
+              color: Colors.white,
             )
           ],
         ),
