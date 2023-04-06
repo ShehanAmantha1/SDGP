@@ -27,7 +27,7 @@ class _TensorflowState extends State<Tensorflow> {
         color: Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             _loading
                 ? Container(
                     height: 300,
@@ -39,7 +39,7 @@ class _TensorflowState extends State<Tensorflow> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
+                      children: [
                         _image == null
                             ? Container()
                             : Container(
@@ -121,8 +121,8 @@ class _TensorflowState extends State<Tensorflow> {
     );
   }
 
-  late List<String> _outputs;
-  File? _image = null;
+  late List _outputs;
+  late File _image;
   bool _loading = false;
 
   @override
@@ -151,7 +151,7 @@ class _TensorflowState extends State<Tensorflow> {
     ))!;
     setState(() {
       _loading = false;
-      //_outputs = output;
+      _outputs = output;
     });
   }
 
