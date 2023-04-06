@@ -29,36 +29,36 @@ class _TensorflowState extends State<Tensorflow> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _loading
+           /* _loading
                 ? Container(
                     height: 300,
                     width: 300,
                   )
-                : Container(
+                : */Container(
                     margin: EdgeInsets.all(20),
                     width: MediaQuery.of(context).size.width,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        _image == null
+                        /*_image == null
                             ? Container()
                             : Container(
                                 child: Image.file(_image!),
                                 height: 300,
-                              ),
+                              ),*/
                         SizedBox(
                           height: 20,
                         ),
-                        _image == null
+                        /*_image == null
                             ? Container()
                             : _outputs != null
-                                ? Text(
+                              ? Text(
                                     _outputs[0],
                                     style: TextStyle(
                                         color: Colors.black, fontSize: 20),
-                                  )
-                                : Container(child: Text(""))
+                                  )*/
+                                 Container(child: Text(""))
                       ],
                     ),
                   ),
@@ -74,7 +74,7 @@ class _TensorflowState extends State<Tensorflow> {
                     setState(() {
                       source = ImageSource.gallery;
                     });
-                    pickImage();
+                    //pickImage();
                   },
                   child: Icon(
                     Icons.add_a_photo,
@@ -92,7 +92,7 @@ class _TensorflowState extends State<Tensorflow> {
                     setState(() {
                       source = ImageSource.camera;
                     });
-                    pickImage();
+                    //pickImage();
                   },
                   child: Icon(
                     Icons.camera,
@@ -123,7 +123,7 @@ class _TensorflowState extends State<Tensorflow> {
     );
   }
 
-  late List _outputs;
+  /*late List _outputs;
   late File _image;
   bool _loading = false;
 
@@ -171,7 +171,7 @@ class _TensorflowState extends State<Tensorflow> {
       _image = image as File;
     });
     classifyImage(_image!);
-  }
+  }*/
 }
 
 FlatButton(
