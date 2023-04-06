@@ -1,9 +1,8 @@
-import 'dart:core';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:myapp/pages/recomened-doctor-page.dart';
 import 'package:tflite/tflite.dart';
+var source;
 
 class Tensorflow extends StatefulWidget {
   @override
@@ -11,120 +10,7 @@ class Tensorflow extends StatefulWidget {
 }
 
 class _TensorflowState extends State<Tensorflow> {
-  //late var source;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          "Prediction",
-          style: TextStyle(color: Colors.white, fontSize: 25),
-        ),
-        backgroundColor: Color.fromARGB(255, 5, 86, 238),
-        elevation: 0,
-      ),
-      body: Container(
-        color: Colors.white,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            /* _loading
-                ? Container(
-                    height: 300,
-                    width: 300,
-                  )
-                : */
-            Container(
-              margin: EdgeInsets.all(20),
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  /*_image == null
-                            ? Container()
-                            : Container(
-                                child: Image.file(_image!),
-                                height: 300,
-                              ),*/
-                  SizedBox(
-                    height: 20,
-                  ),
-                  /*_image == null
-                            ? Container()
-                            : _outputs != null
-                              ? Text(
-                                    _outputs[0],
-                                    style: TextStyle(
-                                        color: Colors.black, fontSize: 20),
-                                  )*/
-                  Container(child: Text(""))
-                ],
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.01,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                FloatingActionButton(
-                  tooltip: 'Pick Image',
-                  onPressed: () {
-                    setState(() {
-                      //source = ImageSource.gallery;
-                    });
-                    //pickImage();
-                  },
-                  child: Icon(
-                    Icons.add_a_photo,
-                    size: 20,
-                    color: Colors.white,
-                  ),
-                  backgroundColor: Colors.amber,
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                FloatingActionButton(
-                  tooltip: 'Pick Image',
-                  onPressed: () {
-                    setState(() {
-                      //source = ImageSource.camera;
-                    });
-                    //pickImage();
-                  },
-                  child: Icon(
-                    Icons.camera,
-                    size: 20,
-                    color: Colors.white,
-                  ),
-                  backgroundColor: Colors.amber,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              child: FlatButton(
-                padding: EdgeInsets.all(10),
-                child: Text('Recomended  Doctors'),
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => doctorpage()));
-                },
-              ),
-              color: Colors.white,
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
-  /*late List _outputs;
+  late List _outputs;
   late File _image;
   bool _loading = false;
 
@@ -147,35 +33,108 @@ class _TensorflowState extends State<Tensorflow> {
       numThreads: 1,
     );
   }
-
   classifyImage(File image) async {
-    var output = (await Tflite.runModelOnImage(
-      path: image.path,
-    ))!;
+     _outputs = (await Tflite.runModelOnImage(
+        path: image.path,
+        ))!;
     setState(() {
       _loading = false;
-      _outputs = output;
+      //_outputs = output;
     });
   }
-
   @override
   void dispose() {
     Tflite.close();
     super.dispose();
   }
-
   pickImage() async {
-    var image = await ImagePicker().pickImage(source: source);
-    if (image == null) return null;
+    var _image = await ImagePicker().pickImage(source: source);
+    if (_image == null) return null;
     setState(() {
       _loading = true;
-      _image = image as File;
+      //_image = image;
     });
-    classifyImage(_image!);
-  }*/
-}
+    classifyImage(_image as File);
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "Skin Check",
+          style: TextStyle(color: Colors.white, fontSize: 25),
+        ),
+        backgroundColor: Colors.amber,
+        elevation: 0,
+      ),
+      body: Container(
+        color: Colors.white,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            _loading ? Container(
+              height: 300,
+              width: 300,
+            ):
+            Container(
+              margin: EdgeInsets.all(20),
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  _image == null ? Container() : Container(child:Image.file(_image),height: 300,),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  _image == null ? Container() : _outputs != null ?
+                  Text(_outputs[0]["label"],style: TextStyle(color: Colors.black,fontSize: 20),
+                  ) : Container(child: Text(""))
+                ],
+              ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.01,
+            ),
+            Row(mainAxisAlignment:MainAxisAlignment.center,
+              children: [
+              FloatingActionButton(
+                tooltip: 'Pick Image',
+                onPressed: (){
+                  setState(() {
+                    source = ImageSource.gallery;
+                  });
+                  pickImage();},
+                child: Icon(Icons.add_a_photo,
+                  size: 20,
+                  color: Colors.white,
+                ),
+                backgroundColor: Colors.amber,
+              ),
+              SizedBox(width: 20,),
+              FloatingActionButton(
+                tooltip: 'Pick Image',
+                onPressed: (){
+                  setState(() {
+                    source = ImageSource.camera;
+                  });
+                  pickImage();},
+                child: Icon(Icons.camera,
+                  size: 20,
+                  color: Colors.white,
+                ),
+                backgroundColor: Colors.amber,
+              ),
+            ],),
+            SizedBox(height: 20,),
+            //Container(child: FlatButton(padding:EdgeInsets.all(10), child: Text('Consult to Doctors'),onPressed:(){ Navigator.pushNamed(context,'DoctorsList');},),color: Colors.amber,)
 
-FlatButton(
-    {required EdgeInsets padding,
-    required Text child,
-    required Null Function() onPressed}) async {}
+          ],
+        ),
+      ),
+    );
+  }
+}
+//FlatButton({EdgeInsets padding, Text child, Null Function() onPressed}) {
+}
