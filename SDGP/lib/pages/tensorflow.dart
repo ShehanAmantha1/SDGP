@@ -10,8 +10,8 @@ class Tensorflow extends StatefulWidget {
 }
 
 class _TensorflowState extends State<Tensorflow> {
-  late List _outputs;
-  late File _image;
+   List _outputs = [];
+   File _image = '' as File;
   bool _loading = false;
 
   @override
@@ -136,5 +136,5 @@ class _TensorflowState extends State<Tensorflow> {
     );
   }
 }
-//FlatButton({EdgeInsets padding, Text child, Null Function() onPressed}) {
+//  FlatButton({EdgeInsets padding, Text child, Null Function() onPressed}) {
 }
