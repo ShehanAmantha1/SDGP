@@ -7,7 +7,7 @@ import 'package:myapp/utils.dart';
 
 class UploadmedicalHistorypage extends StatelessWidget {
   @override
-//   Widget build(BuildContext context) {
+  //Widget build(BuildContext context) {
 //     double baseWidth = 430;
 //     double fem = MediaQuery.of(context).size.width / baseWidth;
 //     double ffem = fem * 0.97;
