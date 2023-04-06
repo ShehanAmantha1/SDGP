@@ -9,26 +9,27 @@ class UploadmedicalHistorypage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          body: Container(
-            margin: EdgeInsets.all(24),
-            child:
-            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              _header(context),
-              _inputFields(context),
+          body: SingleChildScrollView(
+            child: Container(
+              margin: const EdgeInsets.all(24),
+              child:
+              Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+                _header(context),
+                _inputFields(context),
 
-            ]),
+              ]),
+            ),
           ),
         ));
   }
 
   _header(context) {
     return Column(
-      children: [
+      children: const [
         Text(
           "Upload Medical History Page",
           style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
         ),
-
       ],
     );
   }
@@ -42,25 +43,25 @@ class UploadmedicalHistorypage extends StatelessWidget {
             hintText: "Patient Name",
             fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(Icons.person),
+            prefixIcon: const Icon(Icons.person),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
                 borderSide: BorderSide.none),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
 
         TextFormField(
           decoration: const InputDecoration(
-            icon: const Icon(Icons.calendar_today),
+            icon: Icon(Icons.calendar_today),
             hintText: 'Enter your date of birth',
             labelText: 'Date of Birth',
           ),
         ),
 
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
 
@@ -69,13 +70,13 @@ class UploadmedicalHistorypage extends StatelessWidget {
             hintText: "Email",
             fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(Icons.email_outlined),
+            prefixIcon: const Icon(Icons.email_outlined),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
                 borderSide: BorderSide.none),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
 
@@ -84,50 +85,45 @@ class UploadmedicalHistorypage extends StatelessWidget {
             hintText: "Doctor's Name",
             fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(Icons.person),
+            prefixIcon: const Icon(Icons.person),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
                 borderSide: BorderSide.none),
           ),
         ),
 
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
-
-
         TextField(
           decoration: InputDecoration(
               hintText: "Detailed Description",
               labelText: "Description",
               fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
               filled: true,
-              prefixIcon: Icon(Icons.note),
-              labelStyle: TextStyle(fontSize: 24, color: Colors.black),
-              border: UnderlineInputBorder()),
+              prefixIcon: const Icon(Icons.note),
+              labelStyle: const TextStyle(fontSize: 24, color: Colors.black),
+              border: const UnderlineInputBorder()),
           obscureText: false,
           maxLines: 3,
         ),
 
-        SizedBox(
+        const SizedBox(
           height: 16,
         ),
-
-
-
         ElevatedButton(
           onPressed: () {
             Navigator.push(
                 context, MaterialPageRoute(builder: (_) => Medicalhistorypage()));
 
           },
-          child: Text(
+          child: const Text(
             "Submit",
             style: TextStyle(fontSize: 20),
           ),
           style: ElevatedButton.styleFrom(
-            shape: StadiumBorder(),
-            padding: EdgeInsets.symmetric(vertical: 16),
+            shape: const StadiumBorder(),
+            padding: const EdgeInsets.symmetric(vertical: 16),
           ),
         )
       ],

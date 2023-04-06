@@ -14,16 +14,14 @@ class doctorpage extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: Container(
-        // recomeneddoctorpagew4L (1:116)
         width: double.infinity,
         height: 932*fem,
-        decoration: BoxDecoration (
+        decoration: const BoxDecoration (
           color: Color(0x8e748fd4),
         ),
         child: Stack(
           children: [
             Positioned(
-              // rectangle122Smn (1:117)
               left: 15*fem,
               top: 824*fem,
               child: Align(
@@ -33,14 +31,13 @@ class doctorpage extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration (
                       borderRadius: BorderRadius.circular(20*fem),
-                      color: Color(0xffd9d9d9),
+                      color: const Color(0xffd9d9d9),
                     ),
                   ),
                 ),
               ),
             ),
             Positioned(
-              // rectangle94LMN (1:118)
               left: 1*fem,
               top: 219*fem,
               child: Align(
@@ -50,7 +47,7 @@ class doctorpage extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration (
                       borderRadius: BorderRadius.circular(50*fem),
-                      color: Color(0xffffffff),
+                      color: const Color(0xffffffff),
                     ),
                   ),
                 ),
@@ -74,7 +71,7 @@ class doctorpage extends StatelessWidget {
                   width: 203*fem,
                   height: 33.83*fem,
                   decoration: BoxDecoration (
-                    color: Color(0x8e748fd4),
+                    color: const Color(0x8e748fd4),
                     borderRadius: BorderRadius.circular(20*fem),
                   ),
                   child: Center(
@@ -85,7 +82,7 @@ class doctorpage extends StatelessWidget {
                         fontSize: 16*ffem,
                         fontWeight: FontWeight.w500,
                         height: 1.2125*ffem/fem,
-                        color: Color(0xff000000),
+                        color: const Color(0xff000000),
                       ),
                     ),
                   ),
@@ -103,7 +100,7 @@ class doctorpage extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration (
                       borderRadius: BorderRadius.circular(20*fem),
-                      color: Color(0xffd9d9d9),
+                      color: const Color(0xffd9d9d9),
                     ),
                   ),
                 ),
@@ -124,7 +121,7 @@ class doctorpage extends StatelessWidget {
                       fontSize: 13*ffem,
                       fontWeight: FontWeight.w500,
                       height: 1.2125*ffem/fem,
-                      color: Color(0xff131212),
+                      color: const Color(0xff131212),
                     ),
                   ),
                 ),
@@ -145,7 +142,7 @@ class doctorpage extends StatelessWidget {
                       fontSize: 13*ffem,
                       fontWeight: FontWeight.w500,
                       height: 1.2125*ffem/fem,
-                      color: Color(0xff151414),
+                      color: const Color(0xff151414),
                     ),
                   ),
                 ),
@@ -166,7 +163,7 @@ class doctorpage extends StatelessWidget {
                       fontSize: 13*ffem,
                       fontWeight: FontWeight.w500,
                       height: 1.2125*ffem/fem,
-                      color: Color(0xff0f0e0e),
+                      color: const Color(0xff0f0e0e),
                     ),
                   ),
                 ),
@@ -183,7 +180,7 @@ class doctorpage extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration (
                       borderRadius: BorderRadius.circular(20*fem),
-                      color: Color(0xffd9d9d9),
+                      color: const Color(0xffd9d9d9),
                     ),
                   ),
                 ),
@@ -200,7 +197,7 @@ class doctorpage extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration (
                       borderRadius: BorderRadius.circular(20*fem),
-                      color: Color(0xffd9d9d9),
+                      color: const Color(0xffd9d9d9),
                     ),
                   ),
                 ),
@@ -217,7 +214,7 @@ class doctorpage extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration (
                       borderRadius: BorderRadius.circular(20*fem),
-                      color: Color(0xffd9d9d9),
+                      color: const Color(0xffd9d9d9),
                     ),
                   ),
                 ),
@@ -238,7 +235,7 @@ class doctorpage extends StatelessWidget {
                       fontSize: 13*ffem,
                       fontWeight: FontWeight.w500,
                       height: 1.2125*ffem/fem,
-                      color: Color(0xff131212),
+                      color: const Color(0xff131212),
                     ),
                   ),
                 ),
@@ -259,7 +256,7 @@ class doctorpage extends StatelessWidget {
                       fontSize: 13*ffem,
                       fontWeight: FontWeight.w500,
                       height: 1.2125*ffem/fem,
-                      color: Color(0xff151414),
+                      color: const Color(0xff151414),
                     ),
                   ),
                 ),
@@ -280,7 +277,7 @@ class doctorpage extends StatelessWidget {
                       fontSize: 13*ffem,
                       fontWeight: FontWeight.w500,
                       height: 1.2125*ffem/fem,
-                      color: Color(0xff0f0e0e),
+                      color: const Color(0xff0f0e0e),
                     ),
                   ),
                 ),
@@ -301,7 +298,7 @@ class doctorpage extends StatelessWidget {
                       fontSize: 13*ffem,
                       fontWeight: FontWeight.w500,
                       height: 1.2125*ffem/fem,
-                      color: Color(0xff131212),
+                      color: const Color(0xff131212),
                     ),
                   ),
                 ),
@@ -322,7 +319,7 @@ class doctorpage extends StatelessWidget {
                       fontSize: 13*ffem,
                       fontWeight: FontWeight.w500,
                       height: 1.2125*ffem/fem,
-                      color: Color(0xff151414),
+                      color: const Color(0xff151414),
                     ),
                   ),
                 ),
@@ -343,7 +340,7 @@ class doctorpage extends StatelessWidget {
                       fontSize: 13*ffem,
                       fontWeight: FontWeight.w500,
                       height: 1.2125*ffem/fem,
-                      color: Color(0xff0f0e0e),
+                      color: const Color(0xff0f0e0e),
                     ),
                   ),
                 ),
@@ -364,7 +361,7 @@ class doctorpage extends StatelessWidget {
                       fontSize: 13*ffem,
                       fontWeight: FontWeight.w500,
                       height: 1.2125*ffem/fem,
-                      color: Color(0xff131212),
+                      color: const Color(0xff131212),
                     ),
                   ),
                 ),
@@ -385,7 +382,7 @@ class doctorpage extends StatelessWidget {
                       fontSize: 13*ffem,
                       fontWeight: FontWeight.w500,
                       height: 1.2125*ffem/fem,
-                      color: Color(0xff151414),
+                      color: const Color(0xff151414),
                     ),
                   ),
                 ),
@@ -406,7 +403,7 @@ class doctorpage extends StatelessWidget {
                       fontSize: 13*ffem,
                       fontWeight: FontWeight.w500,
                       height: 1.2125*ffem/fem,
-                      color: Color(0xff0f0e0e),
+                      color: const Color(0xff0f0e0e),
                     ),
                   ),
                 ),

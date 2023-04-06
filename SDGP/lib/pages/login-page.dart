@@ -8,7 +8,7 @@ class LoginPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          margin: EdgeInsets.all(24),
+          margin: const EdgeInsets.all(24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -26,11 +26,11 @@ class LoginPage extends StatelessWidget {
   _header(context) {
     return Column(
       children: [
-        Text(
+        const Text(
           "Welcome Back",
           style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
         ),
-        Text("Enter your credential to login"),
+        const Text("Enter your credential to login"),
       ],
     );
   }
@@ -47,9 +47,9 @@ class LoginPage extends StatelessWidget {
                   borderSide: BorderSide.none),
               fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
               filled: true,
-              prefixIcon: Icon(Icons.person)),
+              prefixIcon: const Icon(Icons.person)),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         TextField(
           decoration: InputDecoration(
             hintText: "Password",
@@ -58,23 +58,23 @@ class LoginPage extends StatelessWidget {
                 borderSide: BorderSide.none),
             fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(Icons.security),
+            prefixIcon: const Icon(Icons.security),
           ),
           obscureText: true,
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         ElevatedButton(
           onPressed: () {
             Navigator.push(
                 context, MaterialPageRoute(builder: (_) => HomeScreen()));
           },
-          child: Text(
+          child: const Text(
             "Login",
             style: TextStyle(fontSize: 20),
           ),
           style: ElevatedButton.styleFrom(
-            shape: StadiumBorder(),
-            padding: EdgeInsets.symmetric(vertical: 16),
+            shape: const StadiumBorder(),
+            padding: const EdgeInsets.symmetric(vertical: 16),
           ),
         )
       ],
@@ -85,18 +85,18 @@ class LoginPage extends StatelessWidget {
     return TextButton(onPressed: () {
       Navigator.push(
           context, MaterialPageRoute(builder: (_) => Signuppage()));
-    }, child: Text("Forgot password?"));
+    }, child: const Text("Forgot password?"));
   }
 
   _signup(context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("Dont have an account? "),
+        const Text("Dont have an account? "),
         TextButton(onPressed: () {
           Navigator.push(
               context, MaterialPageRoute(builder: (_) => Signuppage()));
-        }, child: Text("Sign Up"))
+        }, child: const Text("Sign Up"))
       ],
     );
   }

@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: TextButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute<Widget>(builder: (_) => GalleryPage()  ));
+                      MaterialPageRoute<Widget>(builder: (_) => Tensorflow()  ));
                 },
                 style: TextButton.styleFrom(
                   padding: EdgeInsets.zero,

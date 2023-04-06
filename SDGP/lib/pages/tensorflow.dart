@@ -1,8 +1,9 @@
 import 'dart:io';
+import 'dart:typed_data';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
-var source;
 
 class Tensorflow extends StatefulWidget {
   @override
@@ -10,9 +11,10 @@ class Tensorflow extends StatefulWidget {
 }
 
 class _TensorflowState extends State<Tensorflow> {
-  late List _outputs;
-  late File _image;
+  String selectedImagePath = '';
   bool _loading = false;
+  List? _output;
+  File? _image;
 
   @override
   void initState() {
@@ -33,109 +35,188 @@ class _TensorflowState extends State<Tensorflow> {
       numThreads: 1,
     );
   }
+
   classifyImage(File image) async {
     var output = await Tflite.runModelOnImage(
-        path: image.path,
-        );
+      path: image.path,
+    );
     setState(() {
       _loading = false;
-      _outputs = output!;
+      _output = output;
     });
   }
+
   @override
   void dispose() {
     Tflite.close();
     super.dispose();
   }
-  pickImage() async {
-    var image = await ImagePicker().pickImage(source: source);
-    if (image == null) return null;
-    setState(() {
-      _loading = true;
-      _image = image as File;
-    });
-   classifyImage(_image);
-  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          "Prediction",
-          style: TextStyle(color: Colors.white, fontSize: 25),
-        ),
-        backgroundColor: Colors.blue,
-        elevation: 0,
-      ),
-
-      body: Container(
-        color: Colors.white,
+      backgroundColor: Color(0x8e748fd4),
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _loading ? Container(
-              height: 300,
-              width: 300,
-            ):
-            Container(
-              margin: EdgeInsets.all(20),
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  //_image == null ? Container() : Container(child:Image.file(_image),height: 300,),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  //_image == null ? Container() : _outputs != null ?
-                  /*Text(_outputs[0]["label"],style: TextStyle(color: Colors.black,fontSize: 20),
-                  ) : */Container(child: Text(""))
-                ],
-              ),
-           ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.01,
+          children: [
+            selectedImagePath == ''
+                ? Image.asset(
+              'assets/page-1/images/beautiful-girl-face-perfect-skin-1.png',
+              height: 200,
+              width: 200,
+              fit: BoxFit.fill,
+            )
+                : Image.file(
+              File(selectedImagePath),
+              height: 200,
+              width: 200,
+              fit: BoxFit.fill,
             ),
-            Row(mainAxisAlignment:MainAxisAlignment.center,
-              children: [
-              FloatingActionButton(
-                tooltip: 'Pick Image',
-                onPressed: (){
-                  setState(() {
-                    source = ImageSource.gallery;
-                  });
-                  pickImage();},
-                child: Icon(Icons.add_a_photo,
-                  size: 20,
-                  color: Colors.white,
-                ),
-                backgroundColor: Color(0x8e748fd4),
-              ),
-              SizedBox(width: 20,),
-              FloatingActionButton(
-                tooltip: 'Pick Image',
-                onPressed: (){
-                  setState(() {
-                    source = ImageSource.camera;
-                  });
-                  pickImage();},
-                child: Icon(Icons.camera,
-                  size: 20,
-                  color: Colors.white,
-                ),
-                backgroundColor: Color(0x8e748fd4),
-              ),
-            ],),
-            SizedBox(height: 20,),
-            //Container(child: FlatButton(padding:EdgeInsets.all(10), child: Text('Consult to Doctors'),onPressed:(){ Navigator.pushNamed(context,'DoctorsList');},),color: Color(0x8e748fd4),)
 
+            selectedImagePath == null
+                ? Container()
+                : _output == null
+                ? Text(
+              _output![0]["label"],
+              style: TextStyle(color: Colors.black, fontSize: 20),
+            )
+                : Container(child: Text("")),
+            SizedBox(
+              height: 20.0,
+            ),
+            ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.white),
+                    padding:
+                    MaterialStateProperty.all(const EdgeInsets.all(20)),
+                    textStyle: MaterialStateProperty.all(
+                        const TextStyle(fontSize: 14, color: Colors.white))),
+                onPressed: () async {
+                  selectImage();
+                  setState(() {});
+                },
+                child: const Text('Select')),
+            const SizedBox(height: 10),
           ],
         ),
       ),
     );
   }
-}
 
-//FlatButton({EdgeInsets padding, Text child, Null Function() onPressed}) {}
+  Future selectImage() {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Dialog(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0)), //this right here
+            child: Container(
+              height: 150,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  children: [
+                    Text(
+                      'Select Image From !',
+                      style: TextStyle(
+                          fontSize: 18.0, fontWeight: FontWeight.bold),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GestureDetector(
+                          onTap: () async {
+                            selectedImagePath = await selectImageFromGallery();
+                            print('Image_Path:-');
+                            print(selectedImagePath);
+                            if (selectedImagePath != '') {
+                              Navigator.pop(context);
+                              classifyImage(selectedImagePath as File);
+                              setState(() {});
+                            } else {
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(SnackBar(
+                                content: Text("No Image Selected !"),
+                              ));
+                            }
+                          },
+                          child: Card(
+                              elevation: 5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/page-1/images/image-gallery-1.png',
+                                      height: 60,
+                                      width: 60,
+                                    ),
+                                    Text('Gallery'),
+                                  ],
+                                ),
+                              )),
+                        ),
+                        GestureDetector(
+                          onTap: () async {
+                            selectedImagePath = await selectImageFromCamera();
+                            print('Image_Path:-');
+                            print(selectedImagePath);
+
+                            if (selectedImagePath != '') {
+                              Navigator.pop(context);
+                              setState(() {});
+                            } else {
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(SnackBar(
+                                content: Text("No Image Captured !"),
+                              ));
+                            }
+                          },
+                          child: Card(
+                              elevation: 5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/page-1/images/image-gallery-1.png',
+                                      height: 60,
+                                      width: 73.2,
+                                    ),
+                                    Text('Camera'),
+                                  ],
+                                ),
+                              )),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+          );
+        });
+  }
+
+  selectImageFromGallery() async {
+    XFile? file = await ImagePicker()
+        .pickImage(source: ImageSource.gallery, imageQuality: 10);
+    if (file != null) {
+      return file.path;
+    } else {
+      return '';
+    }
+  }
+
+  //
+  selectImageFromCamera() async {
+    XFile? file = await ImagePicker()
+        .pickImage(source: ImageSource.camera, imageQuality: 10);
+    if (file != null) {
+      return file.path;
+    } else {
+      return '';
+    }
+  }
+}

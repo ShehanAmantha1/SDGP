@@ -55,7 +55,9 @@ class _GalleryPageState extends State<GalleryPage> {
                         const TextStyle(fontSize: 25, color: Colors.black))),
                 onPressed: (
 
-                    ) async {
+                    )
+
+                async {
                   selectImage(
 
                   );
