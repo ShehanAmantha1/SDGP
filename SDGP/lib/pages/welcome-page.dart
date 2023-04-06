@@ -123,7 +123,7 @@ class _WelcomepageState extends State<Welcomepage> {
                     child: TextButton(
                       onPressed: () {
                         var push = Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => LoaginPage()));
+                            MaterialPageRoute(builder: (_) => LoginPage()));
                       },
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,
