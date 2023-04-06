@@ -11,7 +11,7 @@ class Tensorflow extends StatefulWidget {
 
 class _TensorflowState extends State<Tensorflow> {
    List _outputs = [];
-   File _image = '' as File;
+   late File _image;
   bool _loading = false;
 
   @override
@@ -48,7 +48,7 @@ class _TensorflowState extends State<Tensorflow> {
     super.dispose();
   }
   pickImage() async {
-    var _image = await ImagePicker().pickImage(source: source);
+     _image = (await ImagePicker().pickImage(source: source)) as File;
     if (_image == null) return null;
     setState(() {
       _loading = true;
