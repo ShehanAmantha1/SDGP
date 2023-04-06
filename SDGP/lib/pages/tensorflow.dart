@@ -10,8 +10,8 @@ class Tensorflow extends StatefulWidget {
 }
 
 class _TensorflowState extends State<Tensorflow> {
-  List _outputs;
-  File _image;
+  late List _outputs;
+  late File _image;
   bool _loading = false;
 
   @override
@@ -39,7 +39,7 @@ class _TensorflowState extends State<Tensorflow> {
         );
     setState(() {
       _loading = false;
-      _outputs = output;
+      _outputs = output!;
     });
   }
   @override
@@ -52,9 +52,9 @@ class _TensorflowState extends State<Tensorflow> {
     if (image == null) return null;
     setState(() {
       _loading = true;
-      _image = image;
+      _image = image as File;
     });
-    classifyImage(_image);
+   classifyImage(_image);
   }
   @override
   Widget build(BuildContext context) {
@@ -62,10 +62,10 @@ class _TensorflowState extends State<Tensorflow> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Skin Check",
+          "Prediction",
           style: TextStyle(color: Colors.white, fontSize: 25),
         ),
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.blue,
         elevation: 0,
       ),
       body: Container(
@@ -83,17 +83,17 @@ class _TensorflowState extends State<Tensorflow> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  _image == null ? Container() : Container(child:Image.file(_image),height: 300,),
+                children: [
+                  //_image == null ? Container() : Container(child:Image.file(_image),height: 300,),
                   SizedBox(
                     height: 20,
                   ),
-                  _image == null ? Container() : _outputs != null ?
-                  Text(_outputs[0]["label"],style: TextStyle(color: Colors.black,fontSize: 20),
-                  ) : Container(child: Text(""))
+                  //_image == null ? Container() : _outputs != null ?
+                  /*Text(_outputs[0]["label"],style: TextStyle(color: Colors.black,fontSize: 20),
+                  ) : */Container(child: Text(""))
                 ],
               ),
-            ),
+           ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
@@ -110,7 +110,7 @@ class _TensorflowState extends State<Tensorflow> {
                   size: 20,
                   color: Colors.white,
                 ),
-                backgroundColor: Colors.amber,
+                backgroundColor: Color(0x8e748fd4),
               ),
               SizedBox(width: 20,),
               FloatingActionButton(
@@ -124,11 +124,11 @@ class _TensorflowState extends State<Tensorflow> {
                   size: 20,
                   color: Colors.white,
                 ),
-                backgroundColor: Colors.amber,
+                backgroundColor: Color(0x8e748fd4),
               ),
             ],),
             SizedBox(height: 20,),
-            //Container(child: FlatButton(padding:EdgeInsets.all(10), child: Text('Consult to Doctors'),onPressed:(){ Navigator.pushNamed(context,'DoctorsList');},),color: Colors.amber,)
+            //Container(child: FlatButton(padding:EdgeInsets.all(10), child: Text('Consult to Doctors'),onPressed:(){ Navigator.pushNamed(context,'DoctorsList');},),color: Color(0x8e748fd4),)
 
           ],
         ),
