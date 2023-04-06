@@ -137,9 +137,9 @@ class _GalleryPageState extends State<GalleryPage> {
                                 child: Column(
                                   children: [
                                     Image.asset(
-                                      'assets/page-1/images/material-symbols-photo-camera.png',
+                                      'assets/page-1/images/image-gallery-1.png',
                                       height: 60,
-                                      width: 60,
+                                      width: 73.2,
                                     ),
                                     Text('Camera'),
                                   ],
