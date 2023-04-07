@@ -18,7 +18,7 @@ class _GalleryPageState extends State<GalleryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF80DEEA),
+      backgroundColor: const Color(0xFF80DEEA),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -36,14 +36,14 @@ class _GalleryPageState extends State<GalleryPage> {
                     width: 200,
                     fit: BoxFit.fill,
                   ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
-            Text(
+            const Text(
               'Select Image',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40.0),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             ElevatedButton(
@@ -84,7 +84,7 @@ class _GalleryPageState extends State<GalleryPage> {
                 padding: const EdgeInsets.all(12.0),
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       'Select Image From !',
                       style: TextStyle(
                           fontSize: 18.0, fontWeight: FontWeight.bold),
@@ -102,7 +102,7 @@ class _GalleryPageState extends State<GalleryPage> {
                               setState(() {});
                             } else {
                               ScaffoldMessenger.of(context)
-                                  .showSnackBar(SnackBar(
+                                  .showSnackBar(const SnackBar(
                                 content: Text("No Image Selected !"),
                               ));
                             }
@@ -118,7 +118,7 @@ class _GalleryPageState extends State<GalleryPage> {
                                       height: 60,
                                       width: 60,
                                     ),
-                                    Text('Gallery'),
+                                    const Text('Gallery'),
                                   ],
                                 ),
                               )),
@@ -134,7 +134,7 @@ class _GalleryPageState extends State<GalleryPage> {
                               setState(() {});
                             } else {
                               ScaffoldMessenger.of(context)
-                                  .showSnackBar(SnackBar(
+                                  .showSnackBar(const SnackBar(
                                 content: Text("No Image Captured !"),
                               ));
                             }
@@ -150,7 +150,7 @@ class _GalleryPageState extends State<GalleryPage> {
                                       height: 60,
                                       width: 73.2,
                                     ),
-                                    Text('Camera'),
+                                    const Text('Camera'),
                                   ],
                                 ),
                               )),
