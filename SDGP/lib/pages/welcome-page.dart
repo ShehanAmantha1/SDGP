@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/pages/login-page.dart';
 import 'package:myapp/pages/signup-page.dart';
 import 'package:myapp/utils.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Welcomepage extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _WelcomepageState extends State<Welcomepage> {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return SingleChildScrollView(
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
         child: Container(
           padding: EdgeInsets.fromLTRB(0 * fem, 133 * fem, 0 * fem, 0 * fem),
@@ -58,12 +59,10 @@ class _WelcomepageState extends State<Welcomepage> {
                       margin:
                           EdgeInsets.fromLTRB(2 * fem, 0 * fem, 0 * fem, 0 * fem),
                       child: const Text(
-                        'Welcome',
+                        'WELCOME',
                         style: TextStyle(
-
-                          fontSize: 44.0,
+                          fontSize: 46.0,
                           fontWeight: FontWeight.bold,
-
                           color: Colors.black,
                         ),
                       ),
@@ -92,7 +91,7 @@ class _WelcomepageState extends State<Welcomepage> {
                         ),
                         child: Container(
                           width: double.infinity,
-                          height: 42 * fem,
+                          height: 50 * fem,
                           decoration: BoxDecoration(
                             color: const Color(0xffffffff),
                             borderRadius: BorderRadius.circular(20 * fem),
@@ -125,7 +124,7 @@ class _WelcomepageState extends State<Welcomepage> {
                         ),
                         child: Container(
                           width: double.infinity,
-                          height: 42 * fem,
+                          height: 50 * fem,
                           decoration: BoxDecoration(
                             color: const Color(0xffffffff),
                             borderRadius: BorderRadius.circular(20 * fem),
@@ -145,7 +144,7 @@ class _WelcomepageState extends State<Welcomepage> {
                         ),
                       ),
                     ),
-                    Container(
+                    /*Container(
                       padding: EdgeInsets.fromLTRB(
                           66.43 * fem, 6.04 * fem, 93.31 * fem, 6.04 * fem),
                       width: double.infinity,
@@ -172,21 +171,6 @@ class _WelcomepageState extends State<Welcomepage> {
                             height: double.infinity,
                             child: Stack(
                               children: [
-                                Positioned(
-                                  left: 0 * fem,
-                                  top: 1.0064697266 * fem,
-                                  child: Align(
-                                    child: SizedBox(
-                                      width: 21.14 * fem,
-                                      height: 21.14 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/vector.png',
-                                        width: 21.14 * fem,
-                                        height: 21.14 * fem,
-                                      ),
-                                    ),
-                                  ),
-                                ),
                                 Positioned(
                                   left: 0.0000305176 * fem,
                                   top: 0 * fem,
@@ -220,7 +204,7 @@ class _WelcomepageState extends State<Welcomepage> {
                           ),
                         ],
                       ),
-                    ),
+                    ),*/
                   ],
                 ),
               ),
