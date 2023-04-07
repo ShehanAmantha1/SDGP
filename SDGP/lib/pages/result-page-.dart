@@ -13,7 +13,6 @@ class resultpage extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: Container(
-        // resultpageGcY (1:89)
         width: double.infinity,
         height: 932*fem,
         decoration: const BoxDecoration (
@@ -22,7 +21,6 @@ class resultpage extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              // rectangle94ymr (1:90)
               left: 1*fem,
               top: 219*fem,
               child: Align(
@@ -39,7 +37,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // rectangle117H1r (1:91)
               left: 34*fem,
               top: 253*fem,
               child: Align(
@@ -56,7 +53,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // group8Pag (1:92)
               left: 114*fem,
               top: 775*fem,
               child: TextButton(
@@ -73,7 +69,6 @@ class resultpage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20*fem),
                   ),
                   child: Center(
-                    // reccomendeddoctoreFi (1:94)
                     child: SizedBox(
                       child: Container(
                         constraints: BoxConstraints (
@@ -97,7 +92,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // group8vU8 (1:95)
               left: 114*fem,
               top: 836*fem,
               child: TextButton(
@@ -288,7 +282,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // probabilityrKA (1:106)
               left: 101*fem,
               top: 524*fem,
               child: Align(
@@ -310,7 +303,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // hivesurticariaLk8 (1:107)
               left: 101*fem,
               top: 496*fem,
               child: Align(
@@ -332,7 +324,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // DZ2 (1:108)
               left: 300*fem,
               top: 291*fem,
               child: Align(
@@ -353,7 +344,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // Kc4 (1:109)
               left: 296*fem,
               top: 369*fem,
               child: Align(
@@ -374,7 +364,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // probabilityDhS (1:110)
               left: 99*fem,
               top: 303*fem,
               child: Align(
@@ -395,7 +384,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // probabilityuqA (1:111)
               left: 99*fem,
               top: 379*fem,
               child: Align(
@@ -416,7 +404,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // acneacnevulgariszrc (1:112)
               left: 101*fem,
               top: 279*fem,
               child: Align(
@@ -437,7 +424,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // tSC (1:113)
               left: 300*fem,
               top: 435*fem,
               child: Align(
@@ -458,7 +444,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // probabilityBAQ (1:114)
               left: 100*fem,
               top: 446*fem,
               child: Align(
@@ -479,7 +464,6 @@ class resultpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // shinglesherpeszosterU9W (1:115)
               left: 100*fem,
               top: 422*fem,
               child: Align(

@@ -7,36 +7,40 @@ import 'package:myapp/pages/upload-medical-hisrtory-page.dart';
 import 'package:myapp/utils.dart';
 
 class Medicalhistorypage extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
+
     return Container(
+
       width: double.infinity,
+
       child: Container(
-        // medicalhistorypagexJk (1:138)
         padding: EdgeInsets.fromLTRB(1*fem, 66*fem, 0*fem, 0*fem),
         width: double.infinity,
         decoration: BoxDecoration (
           color: Color(0x8e748fd4),
         ),
+
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              // autogroupmhziTWQ (8umXkQeaSKSVhZq6wbmHZi)
               margin: EdgeInsets.fromLTRB(27*fem, 0*fem, 14*fem, 110*fem),
               width: double.infinity,
               height: 43*fem,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children:[
+
                   Container(
                     alignment: Alignment.topRight,
 
-                    // vectorQTa (1:151)
                     margin: EdgeInsets.fromLTRB(0*fem, 2*fem, 0*fem, 0*fem),
+
                     child: TextButton(
                       onPressed: () {
                         Navigator.push(
@@ -62,13 +66,13 @@ class Medicalhistorypage extends StatelessWidget {
                 ],
               ),
             ),
+
             SizedBox(
               width: 430*fem,
               height: 768*fem,
               child: Stack(
                 children: [
                   Positioned(
-                    // rectangle122bnx (1:139)
                     left: 14*fem,
                     top: 605*fem,
                     child: Align(
@@ -85,7 +89,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // rectangle94tXA (1:140)
                     left: 0*fem,
                     top: 0*fem,
                     child: Align(
@@ -102,7 +105,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // group8yoW (1:141)
                     left: 113*fem,
                     top: 617*fem,
                     child: TextButton(
@@ -138,7 +140,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // rectangle118pZE (1:144)
                     left: 14*fem,
                     top: 61*fem,
                     child: Align(
@@ -155,7 +156,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // rectangle119XyS (1:145)
                     left: 14*fem,
                     top: 198*fem,
                     child: Align(
@@ -172,7 +172,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // rectangle1203gt (1:146)
                     left: 14*fem,
                     top: 335*fem,
                     child: Align(
@@ -189,7 +188,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // rectangle121kLQ (1:147)
                     left: 14*fem,
                     top: 476*fem,
                     child: Align(
@@ -206,7 +204,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // generalhospitalcolombo4bz (1:152)
                     left: 122*fem,
                     top: 132*fem,
                     child: Align(
@@ -227,7 +224,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // LpQ (1:153)
                     left: 27*fem,
                     top: 78*fem,
                     child: Align(
@@ -248,7 +244,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // drdojanjacksonpzU (1:154)
                     left: 57*fem,
                     top: 102*fem,
                     child: Align(
@@ -269,7 +264,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // generalhospitalcolombo7Ct (1:155)
                     left: 122*fem,
                     top: 276*fem,
                     child: Align(
@@ -311,7 +305,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // drdojanjacksongvC (1:157)
                     left: 57*fem,
                     top: 246*fem,
                     child: Align(
@@ -332,7 +325,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // generalhospitalcolomboB6G (1:158)
                     left: 135*fem,
                     top: 408*fem,
                     child: Align(
@@ -374,7 +366,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // drdojanjacksonvxx (1:160)
                     left: 70*fem,
                     top: 378*fem,
                     child: Align(
@@ -395,7 +386,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // generalhospitalcolomboDhA (1:161)
                     left: 135*fem,
                     top: 554*fem,
                     child: Align(
@@ -437,7 +427,6 @@ class Medicalhistorypage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // drdojanjacksonn7z (1:163)
                     left: 70*fem,
                     top: 524*fem,
                     child: Align(

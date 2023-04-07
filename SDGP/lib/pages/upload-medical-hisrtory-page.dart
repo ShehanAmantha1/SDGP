@@ -27,8 +27,11 @@ class UploadmedicalHistorypage extends StatelessWidget {
     return Column(
       children: const [
         Text(
-          "Upload Medical History Page",
+          "Upload Medical History",
           style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(
+          height: 50,
         ),
       ],
     );
@@ -40,6 +43,7 @@ class UploadmedicalHistorypage extends StatelessWidget {
       children: [
         TextField(
           decoration: InputDecoration(
+
             hintText: "Patient Name",
             fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
             filled: true,
@@ -50,7 +54,7 @@ class UploadmedicalHistorypage extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 10,
+          height: 20,
         ),
 
         TextFormField(
@@ -62,7 +66,7 @@ class UploadmedicalHistorypage extends StatelessWidget {
         ),
 
         const SizedBox(
-          height: 10,
+          height: 20,
         ),
 
         TextField(
@@ -77,7 +81,7 @@ class UploadmedicalHistorypage extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 10,
+          height: 20,
         ),
 
         TextField(
@@ -93,23 +97,24 @@ class UploadmedicalHistorypage extends StatelessWidget {
         ),
 
         const SizedBox(
-          height: 10,
+          height: 20,
         ),
         TextField(
           decoration: InputDecoration(
               hintText: "Detailed Description",
-              labelText: "Description",
+
               fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
               filled: true,
               prefixIcon: const Icon(Icons.note),
               labelStyle: const TextStyle(fontSize: 24, color: Colors.black),
               border: const UnderlineInputBorder()),
+
           obscureText: false,
           maxLines: 3,
         ),
 
         const SizedBox(
-          height: 16,
+          height: 80,
         ),
         ElevatedButton(
           onPressed: () {

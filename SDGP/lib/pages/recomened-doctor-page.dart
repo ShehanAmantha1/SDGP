@@ -54,7 +54,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // group8FDS (1:119)
               left: 114*fem,
               top: 836*fem,
               child: TextButton(
@@ -90,7 +89,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // rectangle118sVi (1:122)
               left: 15*fem,
               top: 280*fem,
               child: Align(
@@ -107,7 +105,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // generalhospitalmatarayHr (1:123)
               left: 53*fem,
               top: 352*fem,
               child: Align(
@@ -128,7 +125,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // mdconsultantdermatologistFmA (1:124)
               left: 53*fem,
               top: 331*fem,
               child: Align(
@@ -149,7 +145,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // drdanielmichealB2Y (1:125)
               left: 53*fem,
               top: 310*fem,
               child: Align(
@@ -170,7 +165,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // rectangle119mWY (1:126)
               left: 15*fem,
               top: 417*fem,
               child: Align(
@@ -187,7 +181,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // rectangle120GiC (1:127)
               left: 15*fem,
               top: 554*fem,
               child: Align(
@@ -204,7 +197,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // rectangle121xb2 (1:128)
               left: 15*fem,
               top: 695*fem,
               child: Align(
@@ -221,7 +213,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // generalhospitalmatarapNL (1:129)
               left: 53*fem,
               top: 489*fem,
               child: Align(
@@ -242,7 +233,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // mdconsultantdermatologisttd6 (1:130)
               left: 53*fem,
               top: 468*fem,
               child: Align(
@@ -263,7 +253,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // drdanielmichealN2U (1:131)
               left: 53*fem,
               top: 447*fem,
               child: Align(
@@ -284,7 +273,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // generalhospitalmataradyz (1:132)
               left: 53*fem,
               top: 624*fem,
               child: Align(
@@ -305,7 +293,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // mdconsultantdermatologistKrp (1:133)
               left: 53*fem,
               top: 603*fem,
               child: Align(
@@ -326,7 +313,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // drdanielmichealnVW (1:134)
               left: 53*fem,
               top: 582*fem,
               child: Align(
@@ -347,7 +333,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // generalhospitalmatarafZJ (1:135)
               left: 53*fem,
               top: 767*fem,
               child: Align(
@@ -368,7 +353,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // mdconsultantdermatologistNCp (1:136)
               left: 53*fem,
               top: 746*fem,
               child: Align(
@@ -389,7 +373,6 @@ class doctorpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // drdanielmichealrNt (1:137)
               left: 53*fem,
               top: 725*fem,
               child: Align(

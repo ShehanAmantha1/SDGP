@@ -21,7 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       width: double.infinity,
       child: Container(
-        // homescreenFPe (1:74)
         width: double.infinity,
         height: 932 * fem,
         decoration: BoxDecoration(
@@ -30,7 +29,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Stack(
           children: [
             Positioned(
-              // rectangle94z6L (1:75)
               left: 1 * fem,
               top: 219 * fem,
               child: Align(
@@ -47,13 +45,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Positioned(
-              // group16fA (18:2)
               left: 152 * fem,
               top: 338 * fem,
               child: TextButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute<Widget>(builder: (_) => Tensorflow()  ));
+                      MaterialPageRoute<Widget>(builder: (_) => GalleryPage()  ));
                 },
                 style: TextButton.styleFrom(
                   padding: EdgeInsets.zero,
@@ -68,7 +65,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(30 * fem),
                   ),
                   child: Center(
-                    // icons8image641Zoe (1:78)
                     child: SizedBox(
                       width: 96 * fem,
                       height: 96 * fem,
@@ -82,7 +78,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Positioned(
-              // group2u6p (18:3)
               left: 152 * fem,
               top: 567 * fem,
               child: TextButton(
@@ -103,7 +98,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(30 * fem),
                   ),
                   child: Center(
-                    // icons8healthgraph501C5v (1:79)
                     child: SizedBox(
                       width: 81 * fem,
                       height: 81 * fem,
@@ -117,7 +111,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Positioned(
-              // uploadapictureXP6 (1:80)
               left: 157 * fem,
               top: 481 * fem,
               child: Align(
@@ -138,7 +131,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Positioned(
-              // medicalhistoryQBz (1:81)
               left: 152 * fem,
               top: 710 * fem,
               child: Align(

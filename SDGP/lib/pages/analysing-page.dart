@@ -20,7 +20,6 @@ class Analysingpage extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: Container(
-        // analysingpageDgt (1:82)
         width: double.infinity,
         height: 932 * fem,
         decoration: BoxDecoration(
@@ -31,7 +30,6 @@ class Analysingpage extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              // rectangle94LFi (1:83)
               left: 1 * fem,
               top: 219 * fem,
               child: Align(
@@ -48,7 +46,6 @@ class Analysingpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // rectangle116DqJ (1:84)
               left: 32 * fem,
               top: 350 * fem,
               child: Align(
@@ -64,7 +61,6 @@ class Analysingpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // group7in4 (1:85)
               left: 114 * fem,
               top: 790 * fem,
               child: TextButton(
@@ -96,7 +92,6 @@ class Analysingpage extends StatelessWidget {
             ),
             // innerbox
             Positioned(
-              // ssdermnetrmeruptivexanthomas2w (1:88)
               left: 32 * fem,
               top: 350 * fem,
               child: Align(
