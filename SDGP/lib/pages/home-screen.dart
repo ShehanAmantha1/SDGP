@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: TextButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute<Widget>(builder: (_) => GalleryPage()  ));
+                      MaterialPageRoute<Widget>(builder: (_) => GalleryPage()));
                 },
                 style: TextButton.styleFrom(
                   padding: EdgeInsets.zero,
@@ -68,7 +68,62 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: SizedBox(
                       width: 96 * fem,
                       height: 96 * fem,
-  : 1.2125 * ffem / fem,
+                      child: Image.asset(
+                        'assets/page-1/images/icons8-image-64-1.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              left: 152 * fem,
+              top: 567 * fem,
+              child: TextButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => Medicalhistorypage()));
+                },
+                style: TextButton.styleFrom(
+                  padding: EdgeInsets.zero,
+                ),
+                child: Container(
+                  padding: EdgeInsets.fromLTRB(
+                      23 * fem, 23 * fem, 24 * fem, 24 * fem),
+                  width: 128 * fem,
+                  height: 128 * fem,
+                  decoration: BoxDecoration(
+                    color: Color(0x8e748fd4),
+                    borderRadius: BorderRadius.circular(30 * fem),
+                  ),
+                  child: Center(
+                    child: SizedBox(
+                      width: 81 * fem,
+                      height: 81 * fem,
+                      child: Image.asset(
+                        'assets/page-1/images/icons8-health-graph-50-1.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              left: 157 * fem,
+              top: 481 * fem,
+              child: Align(
+                child: SizedBox(
+                  width: 122 * fem,
+                  height: 19 * fem,
+                  child: Text(
+                    'Upload a picture ',
+                    style: SafeGoogleFont(
+                      'Inter',
+                      fontSize: 15 * ffem,
+                      fontWeight: FontWeight.w500,
+                      height: 1.2125 * ffem / fem,
                       color: Color(0xff000000),
                     ),
                   ),
